@@ -16,11 +16,13 @@
   <button id="button" class="play"></button>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/weconsole@1.0.8/dist/npm/index.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/vConsole/3.9.0/vconsole.min.js"></script>
 <script src="./assets/js/konva.min.js"></script>
 <script src="./assets/js/utils.js"></script>
 <script src="./assets/js/scene.js"></script>
 <script>
+  new VConsole();
+
   const button = document.querySelector('#button')
   const heartBeat = document.querySelector('#heartBeat')
   const music = document.querySelector('#music')
