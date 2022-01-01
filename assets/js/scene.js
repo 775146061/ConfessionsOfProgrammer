@@ -83,7 +83,6 @@ function Tree(scene) {
       })
     }
   }
-  console.log(scene.stage)
 
   this.draw = function () {
     new Branch(this, new Point(branchData[0], branchData[1]), new Point(branchData[2], branchData[3]),
@@ -333,7 +332,6 @@ function Bloom(scene, treeLayer) {
     if (num < 700) {
       requestAnimationFrame(that.draw)
     } else if(!sakuraRain) {
-      console.log('sakura')
       sakuraRain = new SakuraRain(scene)
       sakuraRain.draw()
     }
