@@ -25,7 +25,6 @@
   const music = document.querySelector('#music')
   button.onclick = function() {
     button.classList.add('active')
-    console.log(button.classList)
     button.addEventListener('transitionend', function() {
       button.parentNode?.removeChild(button)
       const stage = new Scene('#container', {
