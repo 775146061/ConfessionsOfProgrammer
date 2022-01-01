@@ -25,17 +25,19 @@
   const music = document.querySelector('#music')
   button.onclick = function() {
     button.classList.add('active')
-    button.addEventListener('transitionend', function() {
-      button.parentNode?.removeChild(button)
-      const stage = new Scene('#container', {
-        width: window.innerWidth,
-        height: window.innerHeight,
-        heartBeat: heartBeat,
-        music: music
-      })
-      stage.animation()
-    }, false)
   }
+  let stage
+  button.addEventListener('transitionend', function() {
+    if (stage) return
+    button.parentNode?.removeChild(button)
+    stage = new Scene('#container', {
+      width: window.innerWidth,
+      height: window.innerHeight,
+      heartBeat: heartBeat,
+      music: music
+    })
+    stage.animation()
+  }, false)
 </script>
 </body>
 

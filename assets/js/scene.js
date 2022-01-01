@@ -178,7 +178,6 @@ function BeatHeart(scene) {
   heartLayer.add(heart);
   heartLayer.add(highlight)
   stage.add(heartLayer);
-  heartLayer.draw();
 
   const anim = new Konva.Animation(function (frame) {
     const scale = Math.abs(-Math.cos((frame.time * 2 * Math.PI) / 1450) + 2) / 6 + 2;
@@ -197,6 +196,7 @@ function BeatHeart(scene) {
       opacity: 0,
       onFinish: function () {
         heartLayer.destroy()
+        tween.destroy()
         scene.heartBeat.pause()
         scene.music.play()
 
