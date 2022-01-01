@@ -232,7 +232,7 @@ function SakuraRain(scene) {
         new Konva.Tween({
           node: darthNode,
           duration: 0.5,
-          opacity: random(0.7, 1),
+          opacity: 1,
         }).play();
         sakuraList.push(darthNode)
       });
@@ -290,6 +290,7 @@ function Bloom(scene, treeLayer) {
     }
   })
   treeLayer.add(heartLeafGroup)
+  treeLayer.listening(false)
   // x = 16 sin^3 t
   // y = 13 cos t - 5 cos 2t - 2 cos 3t - cos 4t
   // http://www.wolframalpha.com/input/?i=x+%3D+16+sin%5E3+t%2C+y+%3D+(13+cos+t+-+5+cos+2t+-+2+cos+3t+-+cos+4t)
@@ -319,6 +320,7 @@ function Bloom(scene, treeLayer) {
       // heart.filters([Konva.Filters.Blur]);
       // heart.blurRadius(random(0, 40))
       heartLeafGroup.add(heart)
+      heart.listening(false)
 
       new Konva.Tween({
         node: heart,
@@ -329,7 +331,7 @@ function Bloom(scene, treeLayer) {
       }).play();
       ++num
     }
-    if (num < 700) {
+    if (num < 600) {
       requestAnimationFrame(that.draw)
     } else if(!sakuraRain) {
       sakuraRain = new SakuraRain(scene)
