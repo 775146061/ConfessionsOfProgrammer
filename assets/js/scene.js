@@ -189,6 +189,7 @@ function BeatHeart(scene) {
 
   anim.start();
   scene.heartBeat.play()
+  scene.music.pause()
 
   setTimeout(function () {
     const tween = new Konva.Tween({
