@@ -189,7 +189,6 @@ function BeatHeart(scene) {
 
   anim.start();
   scene.heartBeat.play()
-  scene.music.pause()
 
   setTimeout(function () {
     const tween = new Konva.Tween({
@@ -200,7 +199,8 @@ function BeatHeart(scene) {
         heartLayer.destroy()
         tween.destroy()
         scene.heartBeat.pause()
-        scene.music.play()
+        scene.heartBeat.src = './assets/media/ConfessionBallon.mp3'
+        scene.heartBeat.play()
 
         new Tree(scene).draw()
       }
