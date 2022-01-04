@@ -10,8 +10,7 @@
 
 <body>
 <div id="container" style="background: #fff0f6"></div>
-<audio id="heartBeat" loop src="./assets/media/heartBeat.mp3"></audio>
-<audio id="music" loop src="./assets/media/ConfessionBallon.mp3"></audio>
+<audio id="music" loop src="./assets/media/heartBeat.mp3"></audio>
 <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
   <button id="button" class="play"></button>
 </div>
@@ -25,7 +24,6 @@
 
   Konva.pixelRatio = 1
   const button = document.querySelector('#button')
-  const heartBeat = document.querySelector('#heartBeat')
   const music = document.querySelector('#music')
   button.onclick = function() {
     button.classList.add('active')
@@ -37,7 +35,6 @@
     stage = new Scene('#container', {
       width: window.innerWidth,
       height: window.innerHeight,
-      heartBeat: heartBeat,
       music: music
     })
     stage.animation()

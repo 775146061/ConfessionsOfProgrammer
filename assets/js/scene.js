@@ -5,7 +5,6 @@
  * @constructor
  */
 function Scene(container, opts) {
-  this.heartBeat = opts.heartBeat
   this.music = opts.music
   this.width = opts.width
   this.height = opts.height
@@ -188,7 +187,7 @@ function BeatHeart(scene) {
   }, heartLayer);
 
   anim.start();
-  scene.heartBeat.play()
+  scene.music.play()
 
   setTimeout(function () {
     const tween = new Konva.Tween({
@@ -198,9 +197,9 @@ function BeatHeart(scene) {
       onFinish: function () {
         heartLayer.destroy()
         tween.destroy()
-        scene.heartBeat.pause()
-        scene.heartBeat.src = './assets/media/ConfessionBallon.mp3'
-        scene.heartBeat.play()
+        scene.music.pause()
+        scene.music.src = './assets/media/ConfessionBallon.mp3'
+        scene.music.play()
 
         new Tree(scene).draw()
       }
